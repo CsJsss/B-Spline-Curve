@@ -23,7 +23,7 @@ def change_degree(degree):
         return
     global k
     if degree == k:
-        print("Wish input valuse be different as before ")
+        print("Wish input valuse be different as before")
         return
     # change the degree setting
     k = degree
@@ -63,9 +63,7 @@ class CreatLine(object):
 
 
 class Line(object):
-    """"
 
-    """
     # only one can be animated at a time
     lock = None
 
@@ -195,6 +193,7 @@ class Line(object):
             self.pointHide = not self.pointHide
             self.canvas.draw()
 
+    # disconnect
     def disconnect(self):
         self.canvas.mpl_disconnect(self.cidpress)
         self.canvas.mpl_disconnect(self.cidmotion)
