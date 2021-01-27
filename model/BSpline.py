@@ -6,8 +6,6 @@ class BSpline(object):
     def __init__(self, k=3):
         # k is curves order
         self.k = k
-        # # flag : wether need to calculate BaseFunction
-        # self.flag = True
 
     def getpoint(self, cx, cy, ktype=1):
         self.cx = cx
