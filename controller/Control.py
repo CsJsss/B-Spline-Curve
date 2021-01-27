@@ -4,7 +4,8 @@ from model import *
 
 # line list
 LineList = []
-# default degree
+
+# default degree and type
 k = 3
 type = 1
 
@@ -25,8 +26,10 @@ def change_degree(degree):
     if degree == k:
         print("Wish input valuse be different as before")
         return
+    
     # change the degree setting
     k = degree
+    
     # if have line
     if len(LineList):
         for line in LineList:
@@ -82,8 +85,10 @@ class Line(object):
 
         # index of the pick point
         self._index = None
+        
         # Controlline hide
         self.pointHide = False
+        
         # blit background
         self.background = None
 
@@ -101,8 +106,10 @@ class Line(object):
         distance = dict()
         for i in range(len(self.cx)):
             distance[i] = pow((self.cx[i] - event.xdata) ** 2 + (self.cy[i] - event.ydata) ** 2, 0.5)
+            
         # find the index of the min value
         index = min(distance, key=lambda key: distance[key])
+        
         # if this min distance >= threshold:
         if distance[index] >= threshold:
             index = None
@@ -115,6 +122,7 @@ class Line(object):
             return
         if self.pointHide is True:
             return
+        
         # left button press
         if event.button == MouseButton.LEFT:
             self._index = self.get_point_index(event, threshold=0.25)
@@ -123,6 +131,7 @@ class Line(object):
             # get the lock of the Line
             Line.lock = self
         elif event.button == MouseButton.RIGHT:
+            
             # add point on the newest line
             if LineList[len(LineList)-1] is not self:
                 return
@@ -130,6 +139,7 @@ class Line(object):
             if self._index is not None:
                 return
             Line.lock = self
+            
             # update the control point and line
             self.cx.append(event.xdata)
             self.cy.append(event.ydata)
@@ -150,9 +160,11 @@ class Line(object):
             return
         if self._index is None:
             return
+        
         # update the control point
         self.cx[self._index] = event.xdata
         self.cy[self._index] = event.ydata
+        
         # redraw line
         self.line.set_data(self.cx, self.cy)
         self.updateline()
@@ -171,8 +183,8 @@ class Line(object):
     def updateline(self):
         bspline = BSpline(self.k)
         self.bx, self.by = bspline.getpoint(self.cx, self.cy, ktype=self.type)
-
         self.bspline.set_data(self.bx, self.by)
+        
         # redraw the line and bspline
         if self.background:
             self.canvas.restore_region(self.background)
