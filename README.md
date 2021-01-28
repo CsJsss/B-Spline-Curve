@@ -1,5 +1,6 @@
 # B-Spline-Curve
 a tiny and fast B-spline curve  which support user  interaction.
+Go to [B-spline](https://en.wikipedia.org/wiki/B-spline "wiki") for more details.
 ## Demo
 ![demo](./Demo/demo.gif)
 ## Install
