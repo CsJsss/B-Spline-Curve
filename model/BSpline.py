@@ -13,8 +13,10 @@ class BSpline(object):
         self.n = len(cx)
         if self.n < self.k:
             return [], []
+        
         # knots.length = n + k
         self.knots = list(range(self.n + self.k))
+        
         # Uniform type
         if ktype:
             self.knots = np.linspace(0, 1, num=len(self.knots)).tolist()
@@ -23,6 +25,7 @@ class BSpline(object):
             self.knots[:self.k - 1] = [0] * (self.k - 1)
             self.knots[len(self.knots) - self.k + 1:] = [1] * (self.k - 1)
             self.knots[self.k - 1:len(self.knots) - self.k + 1] = np.linspace(0, 1, num=self.n - self.k + 2).tolist()
+            
         # de Boor
         return self.bspline_point()
 
