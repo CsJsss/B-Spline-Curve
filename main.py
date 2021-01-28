@@ -43,7 +43,7 @@ def view():
     input_text.set_val("3")
     
     # radio callback
-    radio = RadioButtons(rax, ('Uniform', 'Clamped'))
+    radio = RadioButtons(rax, ("Uniform", "Clamped"))
     radio.on_clicked(change_type)
 
     # add first line

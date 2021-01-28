@@ -42,10 +42,9 @@ def change_type(label):
 
     global type
     if label == "Uniform":
-        type = 0
-    else:
         type = 1
-
+    else:
+        type = 0
     if len(LineList):
         for line in LineList:
             # update the type of old line
