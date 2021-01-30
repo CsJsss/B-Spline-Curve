@@ -21,5 +21,5 @@ Go to [B-spline](https://en.wikipedia.org/wiki/B-spline "wiki") for more details
 * **Define Curve's degree**: You can input what you want degree of the curve but make sure that you input is valid.
 
 ## Todo list
-* **Add delete Point**
-* **Add delete Line**
+* **Add Point Delete**
+* **Add Line Delete**
