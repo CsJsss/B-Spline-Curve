@@ -18,7 +18,7 @@ Go to [B-spline](https://en.wikipedia.org/wiki/B-spline "wiki") for more details
 ## Features
 * **Interactive**: Use mouse left and mouse right you can add control point and drag control line.
 * **Two types B-spline**: Support Uniform and Clamped type B-spline.
-* **Define Curve's degree**: You can input what you want degree of the curve but make sure that you input is valid.
+* **Define Curve's degree**: You can input what you want degree of the curve but make sure that your input is valid.
 
 ## Todo list
 * **Add Point Delete**
